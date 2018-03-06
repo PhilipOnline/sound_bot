@@ -5,3 +5,5 @@ site_s/settings.py
 site_s/__pycache__/
 loginsys/migrations/
 loginsys/__pycache__/
+cart/__pycache__/
+cart/migrations/

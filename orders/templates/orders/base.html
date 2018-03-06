@@ -8,22 +8,18 @@
         <title>SoundCloud Bot</title>
     </head>
     <body>
-        <div >
+        <div>
+
             <h1><a href="/">CandyShop</a></h1>
         </div>
-               {% if not user.is_authenticated %}
+        {% if not user.is_authenticated %}
         <div>
             <a href="/auth/login">Войти</a>
         </div>
-          <div>
+        <div>
             <a href="/auth/register">Регистрация</a>
         </div>
         {% endif %}
-
-        <div>
-            <a href="/cart">Корзина</a>
-        </div>
-
         {% if user.is_authenticated %}
                 <a href="/auth/logout">Выйти</a>
         {% endif %}

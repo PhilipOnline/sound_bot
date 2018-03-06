@@ -3,3 +3,5 @@ home/__pycache__/
 home/migrations/
 site_s/settings.py
 site_s/__pycache__/
+loginsys/migrations/
+loginsys/__pycache__/

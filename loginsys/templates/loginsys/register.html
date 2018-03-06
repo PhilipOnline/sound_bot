@@ -1,0 +1,19 @@
+{% extends 'loginsys/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+
+
+<form action="/auth/register" method="POST">
+    {% csrf_token %}
+    {% for field in register_form %}
+    {{ field.errors }}
+    {{ field.label_tag }}
+    {{ field }}
+    {% endfor %}
+    <input  type="submit" value="Регистрация" class="submit_auth">
+
+</form>
+
+{% endblock %}

@@ -11,13 +11,13 @@
         <div >
             <h1><a href="/">CandyShop</a></h1>
         </div>
-               {% if not user.is_authenticated %}
-        <div>
-            <a href="/auth/login">Войти</a>
-        </div>
-          <div>
-            <a href="/auth/register">Регистрация</a>
-        </div>
+        {% if not user.is_authenticated %}
+            <div>
+                <a href="/auth/login">Войти</a>
+            </div>
+              <div>
+                <a href="/auth/register">Регистрация</a>
+            </div>
         {% endif %}
 
         <div>
@@ -25,7 +25,14 @@
         </div>
 
         {% if user.is_authenticated %}
+            <p>{{ user.get_full_name }}</p>
+            <div>
+
+                <a href="/profile">Профиль</a>
+            </div>
+            <div>
                 <a href="/auth/logout">Выйти</a>
+            </div>
         {% endif %}
         <div class="content container">
             <div class="row">

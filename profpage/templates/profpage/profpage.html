@@ -1,0 +1,16 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+
+    <h3>Личный кабинет: </h3>
+    <h5> ФИО - {{ user.get_full_name }} </h5>
+    <h5> Email - {{ user.email }} </h5>
+    {{created}}
+    <br>
+    <p>Заказы</p>
+    {% for item in orders %}
+       <p>Дата создания : {{item.created}} - Адрес : {{item.address}} - Сумма заказа:{{item.get_total_cost}}</p>
+
+    {% endfor %}
+
+{% endblock %}

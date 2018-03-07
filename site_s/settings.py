@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'loginsys',
     'cart',
     'orders',
+    'profpage',
+
 
 ]
 

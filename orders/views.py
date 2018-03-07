@@ -4,11 +4,14 @@ from .forms import OrderCreateForm
 from cart.cart import Cart
 
 
+
 def OrderCreate(request):
     cart = Cart(request)
     if request.method == 'POST':
         form = OrderCreateForm(request.POST)
         if form.is_valid():
+            #заполняем поле user_id в заказе текущим пользователем
+            form.instance.user = request.user
             order = form.save()
             for item in cart:
                 OrderItem.objects.create(order=order, product=item['product'],

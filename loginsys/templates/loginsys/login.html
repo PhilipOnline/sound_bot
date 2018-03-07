@@ -1,8 +1,6 @@
-{% extends 'loginsys/base.html' %}
-{% load staticfiles %}
+{% extends "home/base.html" %}
 
 {% block content %}
-
     <form action="/auth/login" method="post">
         {%csrf_token%}
         <label for="username">Имя пользователя</label>

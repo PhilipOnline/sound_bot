@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'auth/', include('loginsys.urls')),
     url(r'^cart/', include('cart.urls')),
     url(r'^order/', include('orders.urls')),
+    url(r'^profile/', include('profpage.urls')),
     url(r'', include('home.urls')),
 
 ]

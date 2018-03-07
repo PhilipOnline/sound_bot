@@ -1,15 +1,17 @@
 {% extends "home/base.html" %}
 
 {% block content %}
+
 <form action="/auth/register" method="POST">
     {% csrf_token %}
     {% for field in register_form %}
-    {{ field.errors }}
-    {{ field.label_tag }}
-    {{ field }}
+        <p>{{ field.label_tag }} {{ field }}{{ field.errors }}</p>
     {% endfor %}
     <input  type="submit" value="Регистрация" class="submit_auth">
 
 </form>
+
+
+
 
 {% endblock %}

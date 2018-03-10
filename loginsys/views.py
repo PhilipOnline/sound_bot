@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404  # render page, return data or 404 page
 from django.http import HttpResponseRedirect
 from django.contrib import auth
-from django.contrib.auth.forms import UserCreationForm
+from .forms import RegForm
 
 def login(request):
     context = {}
@@ -27,10 +27,10 @@ def logout(request):
 
 
 def register(request):
-    register_form = UserCreationForm()
+    register_form = RegForm()
     context = {'register_form': register_form}
     if request.method == 'POST':
-        new_user_form = UserCreationForm(request.POST)
+        new_user_form = RegForm(request.POST)
         if new_user_form.is_valid():
             new_user_form.save()
             new_user = auth.authenticate(username=new_user_form.cleaned_data['username'],

@@ -7,10 +7,10 @@ class RequireSSL:
 
     def __call__(self,request):
         response=self.get_response(request)
-        host=request.get_host()
-        url=request.build_absolute_uri().split(host)[-1]
-        print(url)
-        if not request.is_secure() and url=='/auth/login':
-            return redirect('https://%s/auth/login' % request.get_host())
+        secure_list=['/auth/','/profile/']
+        if not request.is_secure() and any(s in request.path_info for s in secure_list):
+            return redirect('https:'+ request.get_host()+ request.path_info)
+        elif request.is_secure() and any(s in request.path_info for s in secure_list):
+            return redirect('http:'+ request.get_host()+ request.path_info)
         return response
 

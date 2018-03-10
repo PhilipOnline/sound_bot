@@ -56,6 +56,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'loginsys.middleware.RequireSSL',
 
+
 ]
 
 ROOT_URLCONF = 'site_s.urls'
